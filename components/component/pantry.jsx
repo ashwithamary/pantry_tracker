@@ -229,39 +229,41 @@ export function Pantry() {
         </Button>
       </div>
       {isAddModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-6 rounded-lg">
-            <h2 className="text-xl font-bold mb-4">Add New Item</h2>
-            <input
-              type="text"
-              placeholder="Item Name"
-              className="w-full p-2 mb-2 border rounded"
-              value={newItem.name}
-              onChange={(e) => setNewItem({...newItem, name: e.target.value})}
-            />
-            <input
-              type="number"
-              placeholder="Quantity"
-              className="w-full p-2 mb-2 border rounded"
-              value={newItem.quantity}
-              onChange={(e) => setNewItem({...newItem, quantity: parseInt(e.target.value)})}
-            />
-            <select
-              className="w-full p-2 mb-4 border rounded"
-              value={newItem.category}
-              onChange={(e) => setNewItem({...newItem, category: e.target.value})}
-            >
-              <option value="">Select Category</option>
-              <option value="Bread">Bread</option>
-              <option value="Produce">Produce</option>
-              <option value="Canned Goods">Canned Goods</option>
-              <option value="Dairy">Dairy</option>
-              <option value="Grains">Grains</option>
-              <option value="Meat">Meat</option>
-            </select>
-            <div className="flex justify-end">
-              <Button variant="outline" onClick={handleCloseAddModal} className="mr-2">Cancel</Button>
-              <Button onClick={handleAddItem}>Add Item</Button>
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-[#f5f1e8] p-8 rounded-lg shadow-lg max-w-md w-full">
+            <h2 className="text-2xl font-bold mb-6 text-center text-[#3c3c3c]">Add New Item</h2>
+            <div className="space-y-4">
+              <input
+                type="text"
+                placeholder="Item Name"
+                className="w-full p-3 border border-[#d3cec4] rounded-md focus:outline-none focus:ring-2 focus:ring-[#a39e93] bg-white"
+                value={newItem.name}
+                onChange={(e) => setNewItem({...newItem, name: e.target.value})}
+              />
+              <input
+                type="number"
+                placeholder="Quantity"
+                className="w-full p-3 border border-[#d3cec4] rounded-md focus:outline-none focus:ring-2 focus:ring-[#a39e93] bg-white"
+                value={newItem.quantity}
+                onChange={(e) => setNewItem({...newItem, quantity: parseInt(e.target.value)})}
+              />
+              <select
+                className="w-full p-3 border border-[#d3cec4] rounded-md focus:outline-none focus:ring-2 focus:ring-[#a39e93] bg-white"
+                value={newItem.category}
+                onChange={(e) => setNewItem({...newItem, category: e.target.value})}
+              >
+                <option value="">Select Category</option>
+                <option value="Bread">Bread</option>
+                <option value="Produce">Produce</option>
+                <option value="Canned Goods">Canned Goods</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Grains">Grains</option>
+                <option value="Meat">Meat</option>
+              </select>
+            </div>
+            <div className="flex justify-end mt-6 space-x-4">
+              <Button variant="outline" onClick={handleCloseAddModal} className="bg-white hover:bg-[#e8e4db]">Cancel</Button>
+              <Button onClick={handleAddItem} className="bg-[#a39e93] hover:bg-[#8c8679] text-white">Add Item</Button>
             </div>
           </div>
         </div>
